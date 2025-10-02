@@ -16,3 +16,9 @@
 --- contains
 --- get(using selectors)
 --- using timeout where the content might take time to load
+
+
+---> Cypress doesn't uses variables
+
+## Testubg in different devices
+--- cy.viewport()

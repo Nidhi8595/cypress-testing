@@ -12,8 +12,12 @@ describe('Basic tests', () => {
         cy.get('div > a') // way 2
 
         cy.get('[id=skills]') // way 3:- best way in case the style or text changes
-
-        
+       
     })
-    
+
+    //Testing on different devices
+    it('test three',()=>{
+     cy.viewport(1280,720)
+        cy.visit('https://nidhi8595.github.io/HTML_CSS_PROJECTS/Portfolio/')
+    })
 })
