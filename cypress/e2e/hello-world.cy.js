@@ -20,4 +20,11 @@ describe('Basic tests', () => {
      cy.viewport(1280,720)
         cy.visit('https://nidhi8595.github.io/HTML_CSS_PROJECTS/Portfolio/')
     })
+
+    // only running this test
+    it.only('test four',()=>{
+        cy.visit('https://nidhi8595.github.io/HTML_CSS_PROJECTS/Portfolio/')
+        cy.contains('React.js', { timeout: 10000 }).should('be.visible').click()
+        cy.get('#projects').should('be.visible')
+    })
 })
