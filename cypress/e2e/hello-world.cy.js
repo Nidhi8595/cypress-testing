@@ -22,9 +22,37 @@ describe('Basic tests', () => {
     })
 
     // only running this test
-    it.only('test four',()=>{
+    it('test four',()=>{
         cy.visit('https://nidhi8595.github.io/HTML_CSS_PROJECTS/Portfolio/')
         cy.contains('React.js', { timeout: 10000 }).should('be.visible').click()
         cy.get('#projects').should('be.visible')
+
+        cy.go('back') 
+
+        cy.reload()
+    })
+
+    it.only('test five',()=>{
+        cy.visit('https://swiftmark-forge-main.vercel.app/')
+        cy.contains('Sign In').should('be.visible').click()
+
+        cy.get('[id=email]').type('neelakshikadyan@gmail.com')
+        cy.get('[id=password]').type('123456')
+
+        cy.get('button').contains('Sign In').click()
+
+        cy.log('Current URL is ' + cy.url())
+
+
+        // now with wrong credentials
+
+        cy.visit('https://swiftmark-forge-main.vercel.app/') 
+
+        cy.contains('Sign In').should('be.visible').click()
+
+        cy.get('[id=email]').type('neelakshikadyan@gmail.com')
+        cy.get('[id=password]').type('1234')
+
+        cy.get('button').contains('Sign In').click()
     })
 })
